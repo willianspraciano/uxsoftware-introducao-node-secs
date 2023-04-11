@@ -14,7 +14,7 @@
 
 ## 🌐 Tecnologias
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+O projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Node.js](https://nodejs.org/pt-br/)
 - [Prisma ORM](https://www.prisma.io/)
@@ -48,15 +48,34 @@ npm install
 
 ## 🔨 Uso
 
+A primeira coisa a se fazer é configurar o Banco de Dados com o Prisma, rode o seguinte comandos:
+```bash
+npx prisma migrate dev
+```
+
+Para visualizar as tabelas do banco de dados, execute o comando abaixo:
+```bash
+npx prisma studio
+```
+
 Para rodar o projeto basta executar o comando abaixo com o terminar aberto na pasta do seu projeto.
-```jsx
+```bash
 npm run dev
 ```
 
+Agora, você pode acessar uma das seguintes rotas pelo seu navegador:
+projeto.
+```bash
+http://localhost:3333/hello-world
+```
+```bash
+http://localhost:3333/users/list
+```
 
 <br/>
 <br/>
 <h3 align="center">
 Feito com 💚 por <a href="https://www.uxsoftware.com.br/" target="_blank">UX Software</a>
+<br/>
 <br/>
 </h3>
