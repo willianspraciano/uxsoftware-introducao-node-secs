@@ -27,13 +27,13 @@ Este é o projeto desenvolvido ao longo do curso de back-end da III SECS na UFC 
 ## ✨ Funcionalidades
 
 - [x] Hello world inicial;
-- [ ] CRUD de usuários;
+- [x] CRUD de usuários;
 - [ ] CRUD das atividades do usuários;
 - [ ] Autenticação do usuário.
 
 ## 📦 Instalação
 
-Para clonar o projeto, com o [GIT](https://git-scm.com/) já instalado no seu computador, execute o comando abaixo:
+Para clonar o projeto, com o [Git](https://git-scm.com/) já instalado no seu computador, execute o comando abaixo:
 
 ```bash
 git clone https://github.com/willianspraciano/introducao-node-secs.git
@@ -59,17 +59,35 @@ Para visualizar as tabelas do banco de dados, execute o comando abaixo:
 npx prisma studio
 ```
 
-Agora, para rodar o projeto basta executar o comando abaixo com o terminar aberto na pasta do seu projeto.
+Agora, para rodar o projeto basta executar o comando abaixo com o terminar aberto na pasta do seu projeto:
 ```bash
 npm run dev
 ```
 
-Com o projeto rodando, agora você pode acessar uma das seguintes rotas pelo seu navegador (ou usando o [Insomnia](https://insomnia.rest/download)):
+Com o projeto rodando, agora você pode acessar a seguintes rotas pelo seu navegador:
 ```bash
 http://localhost:3333/hello-world
 ```
+
+Usando o [Insomnia](https://insomnia.rest/download), você poderá acessar as seguintes rotas de usuários:
 ```bash
-http://localhost:3333/users/list
+GET http://localhost:3333/users/list
+GET http://localhost:3333/users/show/coloque-aqui-o-id-do-usuario
+DELETE http://localhost:3333/users/delete/coloque-aqui-o-id-do-usuario
+
+POST http://localhost:3333/users/create
+  body (não copie a palavra "body", só o objeto abaixo):
+  {
+    "name": "Willian",
+    "email": "willian@gmail.com"
+  }
+
+PUT http://localhost:3333/users/update/coloque-aqui-o-id-do-usuario
+  body (não copie a palavra "body", só o objeto abaixo):
+  {
+    "name": "Willian Praciano",
+    "email": "willian.s.praciano@gmail.com"
+  }
 ```
 
 <br/>
