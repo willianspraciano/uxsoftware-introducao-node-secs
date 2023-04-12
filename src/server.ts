@@ -1,5 +1,5 @@
 // REQUISIÇÃO -> ME RETORNA ENDEREÇO USUÁRIO
-// https://api.meusite.com/rota-de-endereço/123
+// GET https://api.meusite.com/rota-de-endereco/123
 
 // RESPOSTA -> RETORNA UM OBJETO NO FORMATO JSON
 /*
@@ -10,8 +10,8 @@
 }
 
 ROTAS HTTP
-- GET
 - POST
+- GET
 - PUT
 - DELETE
 
@@ -23,13 +23,19 @@ D - DELETE
 
 */
 
+import 'express-async-errors';
 import express from 'express';
+
 import { routes } from './routes';
+
+import { errorMiddleware } from './errors/errorMiddleware';
 
 const app = express();
 
 app.use(express.json());
 app.use(routes);
+
+app.use(errorMiddleware);
 
 app.listen(3333, () => {
   console.log('Server started on port 3333');
