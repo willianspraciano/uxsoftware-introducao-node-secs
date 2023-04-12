@@ -2,7 +2,6 @@
   "name": "introducao-node-secs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "ts-node src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
