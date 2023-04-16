@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
-import { ZodError } from 'zod';
-import { AppError } from './AppError';
+import { Request, Response, NextFunction } from "express";
+import { ZodError } from "zod";
+import { AppError } from "../errors/AppError";
 
 export async function errorMiddleware(
   error: Error,
@@ -10,20 +10,20 @@ export async function errorMiddleware(
 ) {
   if (error instanceof AppError) {
     return response.status(error.statusCode).json({
-      status: 'error',
+      status: "error",
       message: error.message,
     });
   }
 
   if (error instanceof ZodError) {
     return response.status(400).json({
-      message: 'Validation error.',
+      message: "Validation error.",
       issues: error.issues,
     });
   }
 
   return response.status(400).json({
-    status: 'error',
-    message: 'Internal server error',
+    status: "error",
+    message: "Internal server error",
   });
 }
