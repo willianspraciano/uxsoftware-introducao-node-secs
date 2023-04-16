@@ -1,10 +1,10 @@
-import { Request, Response } from "express";
-import Zod from "zod";
+import { Request, Response } from 'express';
+import Zod from 'zod';
+import { compare } from 'bcrypt';
+import { sign } from 'jsonwebtoken';
 
-import { prisma } from "../lib/prisma";
-import { AppError } from "../errors/AppError";
-import { compare } from "bcrypt";
-import { sign } from "jsonwebtoken";
+import { prisma } from '../lib/prisma';
+import { AppError } from '../errors/AppError';
 
 export class AuthenticateController {
   public async create(request: Request, response: Response) {
@@ -19,23 +19,17 @@ export class AuthenticateController {
       where: { email },
     });
 
-    if (!user) {
-      throw new AppError("Email ou senha inválidos", 401);
-    }
+    if (!user) throw new AppError('Incorrect Email or password', 401);
 
     const passwordMatch = await compare(password, user.password_hash);
 
-    if (!passwordMatch) {
-      throw new AppError("Email ou senha inválidos", 401);
-    }
+    if (!passwordMatch) throw new AppError('Incorrect Email or password', 401);
 
-    const token = sign({}, "minhachavemuitosecreta", {
+    const token = sign({}, 'minhachavemuitosecreta', {
       subject: user.id,
-      expiresIn: "1d",
+      expiresIn: '1d',
     });
 
-    return response.status(200).json({
-      token,
-    });
+    return response.status(200).json({ token });
   }
 }
