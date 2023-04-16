@@ -11,10 +11,28 @@ datasource db {
 }
 
 model User {
-  id            String  @id @default(uuid())
-  email         String  @unique
+  id            String   @id @default(uuid())
+  email         String   @unique
   name          String?
   password_hash String
+  created_at    DateTime @default(now())
+  updated_at    DateTime @default(now()) @updatedAt
+
+  tasks Task[]
 
   @@map("users")
+}
+
+model Task {
+  id          String    @id @default(uuid())
+  name        String
+  time        String
+  finished_at DateTime?
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @default(now()) @updatedAt
+  user_id     String
+
+  user User @relation(fields: [user_id], references: [id])
+
+  @@map("tasks")
 }
