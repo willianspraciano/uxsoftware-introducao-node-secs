@@ -29,8 +29,8 @@ Este é o projeto desenvolvido ao longo do curso de back-end da III SECS na UFC 
 - [x] Hello world inicial;
 - [x] CRUD de usuários;
 - [x] Validação de dados do usuário;
-- [ ] CRUD das atividades do usuários;
-- [ ] Autenticação do usuário.
+- [x] Autenticação do usuário.
+- [x] CRUD das atividades do usuários;
 
 ## 📦 Instalação
 
