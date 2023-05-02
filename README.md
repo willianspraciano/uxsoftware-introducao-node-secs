@@ -37,7 +37,7 @@ Este é o projeto desenvolvido ao longo do curso de back-end da III SECS na UFC 
 Para clonar o projeto, com o [Git](https://git-scm.com/) já instalado no seu computador, execute o comando abaixo:
 
 ```bash
-git clone https://github.com/willianspraciano/introducao-node-secs.git
+git clone https://github.com/willianspraciano/uxsoftware-introducao-node-secs.git
 ```
 
 Em seguida, abra seu editor de código na pasta do seu projeto.
